@@ -13,7 +13,6 @@ import com.jihoon.service.BoardService;
 import com.jihoon.vo.BoardVO;
 
 @Controller
-@RequestMapping("/board/*")
 public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
@@ -22,25 +21,25 @@ public class BoardController {
 	BoardService service;
 	
 	// 게시판 글 작성 화면
-	@RequestMapping(value = "/board/writeView", method = RequestMethod.GET)
-	public void writeView() throws Exception{
-		logger.info("writeView");
-		
+	@RequestMapping(value = "writeView", method = RequestMethod.GET)
+	public String writeView() throws Exception{
+		logger.info("board/writeView");
+		return "board/writeView";
 	}
 	
 	// 게시판 글 작성
-	@RequestMapping(value = "/board/write", method = RequestMethod.POST)
+	@RequestMapping(value = "write", method = RequestMethod.POST)
 	public String write(BoardVO boardVO) throws Exception{
-		logger.info("write");
+		logger.info("board/write");
 		
 		service.write(boardVO);
 		
-		return "redirect:/";
+		return "redirect:/list";
 	}
 	// 게시판 목록 조회
 	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public String list(Model model) throws Exception{
-		logger.info("list");
+		logger.info("board/list");
 		
 		model.addAttribute("list",service.list());
 		
@@ -48,4 +47,14 @@ public class BoardController {
 		return "board/list";
 		
 	}
+	
+	//게시물 열람
+	@RequestMapping(value="/readView", method = RequestMethod.GET)
+	public String read(BoardVO boardVO, Model model) throws Exception{
+		logger.info("board/read");
+		
+		model.addAttribute("read",service.read(boardVO.getBno()));
+		return "board/readView";
+	}
+	
 }

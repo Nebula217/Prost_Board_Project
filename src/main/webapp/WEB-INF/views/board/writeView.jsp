@@ -20,7 +20,7 @@
 			<hr />
 			
 			<section id="container">
-				<form role="form" method="post" action="/board/write">
+				<form role="form" method="post" action="write">
 					<table>
 						<tbody>
 							<tr>
