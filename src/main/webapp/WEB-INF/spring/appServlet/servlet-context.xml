@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.jihoon.board_pjt" />
+	<context:component-scan base-package="com.jihoon.board_pjt, com.jihoon.controller" />
 	
 	
 	
