@@ -143,6 +143,13 @@
             <artifactId>spring-test</artifactId> 
             <version>5.0.7.RELEASE</version> 
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>5.2.5.RELEASE</version>
+</dependency>
+
         <!-- log4jdbc-log4j2-jdbc4 -->
         <dependency>
             <groupId>org.bgee.log4jdbc-log4j2</groupId>

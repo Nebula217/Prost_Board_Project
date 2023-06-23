@@ -5,14 +5,23 @@
 <mapper namespace="boardMapper">
    <!-- 게시판에 글 작성하기 -->
      <insert id="insert">
-	   INSERT INTO MP_BOARD(    BNO 
-	   					      , TITLE 
-	   					      , CONTENT 
-	   					      , WRITER  )
-	                 VALUES(    MP_BOARD_SEQ.NEXTVAL 
+	   INSERT INTO mp_board(    bno 
+	   					      , title 
+	   					      , content 
+	   					      , writer  )
+	                 VALUES(    mp_board_seq.nextval
 	                 		  , #{title}
 	                 		  , #{content}
-	                 		  , #{writer}  )
+	                 		  , #{writer}  );
    
    </insert>
+   
+   <select id="list" resultType="com.jihoon.vo.BoardVO">
+		SELECT   bno
+			   , title
+			   , writer
+			   , regdate
+		  FROM mp_board
+		  ORDER BY bno DESC;
+	</select>
 </mapper>
