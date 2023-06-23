@@ -38,7 +38,7 @@ public class BoardController {
 		return "redirect:/";
 	}
 	// 게시판 목록 조회
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public String list(Model model) throws Exception{
 		logger.info("list");
 		
