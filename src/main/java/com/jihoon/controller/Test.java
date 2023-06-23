@@ -30,7 +30,7 @@ public class Test {
             e.printStackTrace();
         }
     }
-   
+    
   
     @org.junit.Test
     public void factoryTest() {
