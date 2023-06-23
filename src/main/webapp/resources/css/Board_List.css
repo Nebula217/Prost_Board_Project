@@ -1,0 +1,93 @@
+        body {
+            padding-top: 70px;
+            /* 생략 */
+        }
+
+        .head {
+            height: 40px;
+            padding: 1rem;
+            color: white;
+            background: #005f83;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .container {
+            font-family: arial;
+            font-size: 24px;
+            margin-left: 25px;
+            margin-top: 10px;
+            margin-right: 25px;
+            padding-bottom: 100px; /* footer 높이만큼 아래 여백 추가 */
+            
+            display: flex;
+            justify-content: center;
+            height: auto;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10rem;
+            background: rgba(147, 175, 199, 0.175);
+        }
+        
+        
+        
+        
+        .custom-form {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  box-shadow: 6px 16px 23px -10px #555555;
+  border-radius:7px;
+}
+th{
+	height:50px;
+	background-color:#ffb81c;
+	color:#ffffff;
+	
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th.bno, td.bno {
+  width: 30px;
+  padding-left:30px;
+}
+
+th.title, td.title {
+  width: 200px;
+}
+
+th.writer, td.writer,
+th.date, td.date {
+  width: 50px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
