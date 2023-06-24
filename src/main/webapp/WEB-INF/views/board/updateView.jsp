@@ -6,6 +6,17 @@
 	<link href="${pageContext.request.contextPath}/resources/css/Board_List.css"rel="stylesheet" type="text/css">
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	<title>게시판</title>
+	 	<style>
+input{
+border:0px;
+border-radius:5px;
+}
+textarea{
+border:0px;
+border-radius:5px;
+background-color: #fff9ea;
+}
+</style>
 	</head>
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -42,12 +53,7 @@
 	
 		<div id="root">
 			<%@include file="../include/header.jsp" %>
-			<hr />
-			 
-				<div>
-			<%@include file="../include/nav.jsp" %>
-			</div>
-			<hr />
+	
 			
 			<section class="container">
 				<form name="updateForm" role="form" method="post" action="update">
@@ -57,23 +63,23 @@
 						<tbody>
 							<tr>
 								<th>
-									<label for="title">제목</label><input class="writeInput" type="text" id="title" name="title" value="${update.title}"/>
+									<label for="title">제목 : </label><input class="writeInput" type="text" id="title" name="title" value="${update.title}"/>
 								</th>
 							</tr>	
-							<tr>
+							<tr class="yel">
 							<td>
-									<label for="writer">작성자</label><input type="text" id="writer" class="readInputOther" name="writer" value="${update.writer}" readonly="readonly"/>
+									<label for="writer">작성자 : </label><input type="text" id="writer" class="readInputOther" name="writer" value="${update.writer}" readonly="readonly"/>
 								</td>
 								</tr>
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea class="writeInputContent" id="content" name="content"><c:out value="${update.content}" /></textarea>
+									<label for="content">내용</label><textarea style="height:400px; margin-top:20px;" class="writeInputContent" id="content" name="content"><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>
 								
 							</tr>
-							<tr>
+							<tr class="yel">
 								<td>
 									<label for="regdate">작성날짜</label>
 									<fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd"/>					
@@ -82,8 +88,9 @@
 						</tbody>			
 					</table>
 					<div>
-						<button type="submit" class="update_btn">저장</button>
-						<button type="submit" class="cancel_btn">취소</button>
+					<button style="float:right;" type="submit" class="cancel_btn">취소</button>
+						<button style="float:right;" type="submit" class="update_btn">저장</button>
+						
 					</div>
 				</form>
 			</section>

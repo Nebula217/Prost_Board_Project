@@ -7,6 +7,17 @@
 <link href="${pageContext.request.contextPath}/resources/css/Board_List.css"rel="stylesheet" type="text/css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<title>게시판</title>
+	<style>
+input{
+border:0px;
+border-radius:5px;
+}
+textarea{
+border:0px;
+border-radius:5px;
+background-color: #fff9ea;
+}
+	</style>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -34,12 +45,7 @@
 	
 		<div id="root">
 			<%@include file="../include/header.jsp" %>
-			<hr />
-			 
-				<div>
-			<%@include file="../include/nav.jsp" %>
-			</div>
-			<hr />
+	
 			
 			<section class="container">
 				<form name="writeform" role="form" method="post" action="write">
@@ -48,24 +54,27 @@
 						<tbody>
 							<tr>
 								<th>
-									<label for="title">제목  : </label><input style="margin-left:20px;;" class="writeInputOther" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
+									<label for="title">제목  : </label><input style="margin-left:20px;" class="writeInputOther" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
 								</th>
 							</tr>	
-							<tr>
+							<tr class="yel">
 							<td>
 							<label for="writer">작성자 : </label><input class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
 							</td>
 							</tr>
-							<tr>
+							<tr class="yel">
 								<td>
-									<label for="content">내용</label><textarea style="margin-top:10px;" class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
+									<label for="content">내용</label><textarea style="height:400px; margin-top:10px;" class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
 								</td>
 							</tr>
 							<tr>
 						
 							<tr>
-								<td>						
-									<button type="submit">작성</button>
+								<td>				
+									<a style="float:right;" href="list">취소</a>
+										
+									<button style="float:right;" class="update_btn" type="submit">작성</button>
+									
 								</td>
 							</tr>			
 						</tbody>			

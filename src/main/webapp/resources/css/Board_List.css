@@ -60,6 +60,31 @@ body {
 .write-button:hover {
     background-color: #0080c0;
 }
+.action-buttons {
+    display: inline-block;
+    float: right;
+}
+.cancel_btn,
+.delete_btn,
+.update_btn,
+.list_btn,
+.answer_btn {
+    background-color: #005f83;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 4px;
+    cursor: pointer;
+}
+.cancel_btn:hover,
+.delete_btn:hover,
+.update_btn:hover,
+.list_btn:hover,
+.answer_btn:hover {
+    background-color: #0080c0;
+}
 .head {
 	height: 40px;
 	padding: 1rem;
@@ -82,24 +107,24 @@ body {
 	margin-left: 25px;
 	margin-top: 10px;
 	margin-right: 25px;
-	padding-bottom: 100px; /* footer 높이만큼 아래 여백 추가 */
+	padding-bottom: 190px; /* footer 높이만큼 아래 여백 추가 */
 	display: flex;
 	justify-content: center;
 	height: auto;
 }
 form{
-	
-	
-}
-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 10rem;
-	background: rgba(147, 175, 199, 0.175);
+	width:auto;
+
 }
 
+
+footer{
+  background: rgba(147, 175, 199, 0.175);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 .custom-form {
 	font-family: Arial, sans-serif;
 	width: 100%;
@@ -151,9 +176,11 @@ footer {
     
 }
 table {
+	
 	width: 800px;
 	border-collapse: collapse;
-	box-shadow: 5px 5px 3px #666 border-radius:1px;
+	
+	border-radius:1px;
 }
 
 th {
@@ -177,11 +204,11 @@ th.title, td.title {
 }
 
 th.writer, td.writer, th.date, td.date {
-	width: 50px;
+	width: 80px;
 }
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
+tr.yel{
+	background-color: #fff3d5;
 }
 
 a {

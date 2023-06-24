@@ -11,22 +11,21 @@
 	rel="stylesheet" type="text/css">
 <title>게시판</title>
 
+<style>
 
+</style>
 
 </head>
 
 <body>
 	<div id="root">
 		<%@include file="../include/header.jsp"%>
-		<hr />
-		<div>
-			<%@include file="../include/nav.jsp"%>
-		</div>
-		<hr />
+
 
 		<section class="container">
 			<div>
 				<form role="form" method="post" action="write">
+				<h1>Q/A</h1>
 <table>
   <tr>
     <th class="bno">번호</th>
@@ -39,7 +38,7 @@
     <tr>
       <td class="bno"><c:out value="${item.bno}" /></td>
       <td>
-        <a href="readView?bno=${item.bno}">
+        <a style="text-decoration: none;" href="readView?bno=${item.bno}">
           <c:forEach begin="1" end="${item.depth}" varStatus="loop">
             &#8199;&#8199; <!-- 공백 문자 -->
           </c:forEach>
