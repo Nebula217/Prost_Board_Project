@@ -30,8 +30,8 @@
 <table>
   <tr>
     <th style="width:70px;"class="bno">번호</th>
-    <th style="width:520px;"class="title">제목</th>
-    <th style="width:110px;"class="writer">작성자</th>
+    <th style="width:550px;"class="title">제목</th>
+    <th style="width:130px;"class="writer">작성자</th>
     <th style="width:100px;" class="date">등록일</th>
   </tr>
 

@@ -24,8 +24,8 @@
 		INSERT INTO mp_board(BNO, TITLE, CONTENT, WRITER, refer, step, depth)
 		VALUES (mp_board_seq.nextval, #{title}, #{content}, #{writer}, 
         (SELECT refer FROM mp_board WHERE bno = ${bno}),
-        (SELECT MAX(step) FROM mp_board) + 1,
-        (SELECT MAX(depth) FROM mp_board) + 1)
+        (SELECT MAX(step) FROM mp_board WHERE bno = ${bno}) + 1,
+        (SELECT MAX(depth) FROM mp_board WHERE bno = ${bno}) + 1)
 	</insert>
 	
 	<update id="update" parameterType="com.jihoon.vo.BoardVO">
