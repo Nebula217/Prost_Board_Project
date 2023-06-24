@@ -3,9 +3,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 	<head>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="${pageContext.request.contextPath}/resources/css/Board_List.css"rel="stylesheet" type="text/css">
 	 	<title>게시판</title>
 	</head>
+	
 	<body>
 		<div id="root">
 	<%@include file="../include/header.jsp" %>
@@ -16,6 +18,7 @@
 			<hr />
 			
 			<section class="container">
+				<div>
 				<form role="form" method="post" action="write">
 					<table>
 						 <tr>
@@ -27,7 +30,7 @@
 						
 						<c:forEach items="${list}" var = "list">
 							<tr>
-								<td><c:out value="${list.bno}" /></td>
+								<td class="bno"><c:out value="${list.bno}" /></td>
 								<td>
 									<a href="readView?bno=${list.bno}"><c:out value="${list.title}" /></a>
 								</td>
@@ -35,9 +38,24 @@
 								<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
 							</tr>
 						                      </c:forEach>
+
                     </table>
                 </form>
-           
+           <table>
+           <tr>
+    <td style="background-color:#ffffff00;" colspan="4" class="last-row">
+        <div class="search-bar">
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button class="search-button" title="미구현">검색</button>
+        </div>
+        <div class="action-buttons">
+            <a href="list"><button  class="list-button">목록</button></a>
+            <a href="writeView"><button href="writeView" class="write-button">글작성</button></a>
+        </div>
+    </td>
+</tr>
+</table>
+
         </section>
     </div>
     <footer>
