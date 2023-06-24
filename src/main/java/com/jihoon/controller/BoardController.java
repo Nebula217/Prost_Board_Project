@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jihoon.service.BoardService;
 import com.jihoon.vo.BoardVO;
+import com.jihoon.vo.Criteria;
+import com.jihoon.vo.PageMaker;
 
 @Controller
 public class BoardController {
@@ -37,22 +39,32 @@ public class BoardController {
 		return "redirect:/list";
 	}
 	// 게시판 목록 조회
-	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public String list(Model model) throws Exception{
-		logger.info("board/list");
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list(Model model, Criteria cri) throws Exception{
+		logger.info("list");
 		
-		model.addAttribute("list",service.list());
+		model.addAttribute("list", service.list(cri));
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCount());
+		
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/list";
 		
 	}
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String start(Model model) throws Exception{
-		logger.info("board/list");
+	public String start(Model model, Criteria cri) throws Exception{
+		logger.info("list");
 		
-		model.addAttribute("list",service.list());
+		model.addAttribute("list", service.list(cri));
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCount());
+		
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "board/list";
 		

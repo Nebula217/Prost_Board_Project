@@ -9,11 +9,33 @@
 		VALUES (mp_board_seq.nextval, #{title}, #{content}, #{writer}, (select nvl(max(refer),0)+1 from mp_board), #{step}, #{depth})
 	</insert>
 
-	<select id="list" resultType="com.jihoon.vo.BoardVO">
-		SELECT bno, title, writer, regdate, refer, step, depth
-		FROM mp_board ORDER BY refer desc,step
+	<select id="listPage" resultType="com.jihoon.vo.BoardVO" parameterType="com.jihoon.vo.Criteria">
+		SELECT  BNO, 
+		        TITLE, 
+		        CONTENT,
+		        WRITER, 
+		        REGDATE, refer, step, depth
+		 FROM ( 
+		        SELECT BNO, 
+		               TITLE, 
+		               CONTENT, 
+		               WRITER, 
+		               REGDATE, refer, step, depth, 
+		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
+		         FROM MP_BOARD 
+		                       ) MP
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY BNO DESC
 	</select>
-
+	
+<select id="listCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(BNO)
+		  FROM MP_BOARD
+		 WHERE BNO > 0
+	]]>
+	</select>
+	
 	<select id="read" parameterType="int" resultType="com.jihoon.vo.BoardVO">
 		SELECT bno, title, content, writer, regdate
 		FROM mp_board
