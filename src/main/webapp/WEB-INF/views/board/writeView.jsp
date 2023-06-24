@@ -46,12 +46,14 @@
 					<table>
 						<tbody>
 							<tr>
-								<td>
+								<th>
 									<label for="title">제목</label><input class="writeInputOther" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
-								</td>
+								</th>
 							</tr>	
 							<tr>
+							<td>
 							<label for="writer">작성자</label><input class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
+							</td>
 							</tr>
 							<tr>
 								<td>

@@ -109,12 +109,14 @@ footer {
     background-color: #f2f2f200;
     font-size: x-large;
     color: #f2f2f2;
+    pointer-events: none;
     
 }
 .readInputOther{
     border: 0px;
     background-color: #f2f2f200;
     font-size: smaller;
+    pointer-events: none;
     
 }
 .readInputContent{
@@ -123,24 +125,25 @@ footer {
     font-size:medium;
     width:800px;
     height: auto;
+    pointer-events: none;
     
 }
 .writeInput{
     
-    background-color: #f2f2f200;
-    font-size: x-large;
-    color: #f2f2f2;
+    background-color: #ffffff;
+   	font-size: midium;
+    
     
 }
 .writeInputOther{
     
-    background-color: #f2f2f200;
+    background-color: #ffffff;
     font-size: smaller;
     
 }
 .writeInputContent{
     
-    background-color: #f2f2f200;
+    background-color: #ffffff;
     font-size:medium;
     width:800px;
     height: auto;
