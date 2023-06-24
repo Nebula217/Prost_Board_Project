@@ -49,4 +49,12 @@ public class BoardDAOImpl implements BoardDAO {
 
 		sqlSession.delete("boardMapper.delete", bno);
 	}
+	
+	// 게시물 답변
+	@Override
+	public void reply(BoardVO boardVO) throws Exception {
+
+		sqlSession.insert("boardMapper.reply", boardVO);
+		
+	}
 }

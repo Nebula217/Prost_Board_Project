@@ -52,6 +52,7 @@
 			<section class="container">
 				<form name="updateForm" role="form" method="post" action="update">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
+					<h1>수정하기</h1>
 					<table>
 						<tbody>
 							<tr>

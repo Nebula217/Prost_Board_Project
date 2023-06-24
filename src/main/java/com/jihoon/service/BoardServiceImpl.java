@@ -50,6 +50,13 @@ public class BoardServiceImpl implements BoardService {
 		dao.delete(bno);
 	}
 	
+	//게시물 답변
+	@Override
+	public void reply(BoardVO boardVO) throws Exception {
+		
+		dao.reply(boardVO);
+	}
+	
 	
 	
 

@@ -43,21 +43,22 @@
 			
 			<section class="container">
 				<form name="writeform" role="form" method="post" action="write">
+					<h1>글 쓰기</h1>
 					<table>
 						<tbody>
 							<tr>
 								<th>
-									<label for="title">제목</label><input class="writeInputOther" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
+									<label for="title">제목  : </label><input style="margin-left:20px;;" class="writeInputOther" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
 								</th>
 							</tr>	
 							<tr>
 							<td>
-							<label for="writer">작성자</label><input class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
+							<label for="writer">작성자 : </label><input class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
 							</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
+									<label for="content">내용</label><textarea style="margin-top:10px;" class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
 								</td>
 							</tr>
 							<tr>

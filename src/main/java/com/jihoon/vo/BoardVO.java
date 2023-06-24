@@ -10,6 +10,9 @@ public class BoardVO { //vo는 DB에 있는 테이블 컬럼 값을 java에서 �
 		private String content;
 		private String writer;
 		private Date regdate;
+		private int refer;
+		private int step;
+		private int depth;
 
 		
 		
@@ -46,6 +49,24 @@ public class BoardVO { //vo는 DB에 있는 테이블 컬럼 값을 java에서 �
 		}
 		public void setRegdate(Date regdate) {
 			this.regdate = regdate;
+		}
+		public int getRefer() {
+			return refer;
+		}
+		public void setRefer(int refer) {
+			this.refer = refer;
+		}
+		public int getStep() {
+			return step;
+		}
+		public void setStep(int step) {
+			this.step = step;
+		}
+		public int getDepth() {
+			return depth;
+		}
+		public void setDepth(int depth) {
+			this.depth = depth;
 		}
 		
 }

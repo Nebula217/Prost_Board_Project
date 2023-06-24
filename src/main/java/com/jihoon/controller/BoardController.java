@@ -98,4 +98,21 @@ public class BoardController {
 		return "redirect:/list";
 	}
 	
+	// 게시판 글 답변 작성 화면
+	@RequestMapping(value = "answerView", method = RequestMethod.GET)
+	public String answerView(BoardVO boardVO, Model model) throws Exception{
+		logger.info("board/answerView");
+		
+	
+		return "board/answerView";
+	}
+	// 게시판 글 답변하기
+	@RequestMapping(value = "answer", method = RequestMethod.POST)
+	public String answer(BoardVO boardVO) throws Exception{
+		logger.info("board/answerView");
+		
+		service.reply(boardVO);
+	
+		return "redirect:/list";
+}
 }
