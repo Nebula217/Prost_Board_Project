@@ -13,6 +13,7 @@
 
 <style>
 
+
 </style>
 
 </head>
@@ -25,17 +26,17 @@
 		<section class="container">
 			<div>
 				<form role="form" method="post" action="write">
-				<h1>Q/A</h1>
+				<h1 style="color: #ff601c;">Q/A</h1>
 <table>
   <tr>
-    <th class="bno">번호</th>
-    <th class="title">제목</th>
-    <th class="writer">작성자</th>
-    <th class="date">등록일</th>
+    <th style="width:70px;"class="bno">번호</th>
+    <th style="width:520px;"class="title">제목</th>
+    <th style="width:110px;"class="writer">작성자</th>
+    <th style="width:100px;" class="date">등록일</th>
   </tr>
 
   <c:forEach items="${list}" var="item">
-    <tr>
+    <tr style="background-color: #fffcf5;">
       <td class="bno"><c:out value="${item.bno}" /></td>
       <td>
         <a style="text-decoration: none;" href="readView?bno=${item.bno}">
@@ -72,5 +73,7 @@
 				</table>
 		</section>
 	</div>
-	<footer> </footer>
+	<footer>
+	
+	</footer>
 </body>

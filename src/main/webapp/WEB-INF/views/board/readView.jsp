@@ -15,6 +15,9 @@ input{
 border:0px;
 border-radius:5px;
 }
+textarea:focus {
+  outline: none;
+}
 textarea{
 border:0px;
 border-radius:5px;
@@ -56,15 +59,17 @@ background-color: #fff9ea;
 </script>
 <!-- 숨겨진 답변 창 나오도록 -->
 <script type="text/javascript">
-	var bDisplay = true;
-	function doDisplay() {
-		var con = document.getElementById("myDIV");
-		if (con.style.display == 'none') {
-			con.style.display = 'block';
-		} else {
-			con.style.display = 'none';
-		}
-	}
+  var bDisplay = true;
+  function doDisplay() {
+    var con = document.getElementById("myDIV");
+    if (con.style.display == 'none') {
+      con.style.display = 'block';
+      // 해당 요소로 스크롤하면서 부드럽게 이동
+      con.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      con.style.display = 'none';
+    }
+  }
 </script>
 <body>
 
@@ -77,22 +82,22 @@ background-color: #fff9ea;
 				<input type="hidden" id="bno" name="bno" value="${read.bno}" />
 			</form>
 			<div>
-			<h1>Q/A</h1>
+			<h1 style="color: #ff601c;">Q/A</h1>
 				<table>
 
 					<tbody>
 						<tr>
-							<th><label for="title">제목 : </label><input class="readInput"
+							<th><label for="title">제목 : </label><input style="width:600px; color: #ffffff;" class="readInput"
 								type="text" id="title" name="title" value="${read.title}"
 								readonly="readonly" /></th>
 						</tr>
 						<tr class="yel">
-							<td><label for="writer">작성자 : </label><input type="text"
+							<td><label for="writer">작성자 : </label><input style="width:300px;" type="text"
 								class="readInputOther" id="writer" name="writer"
 								value="${read.writer}" readonly="readonly" /></td>
 
 						</tr>
-						<tr>
+						<tr style="background-color: #fffcf5;">
 							<td><label for="content"></label>
 							<textarea  style="height:400px; border:0px;" class="readInputContent" id="content" name="content"
 									readonly="readonly"><c:out value="${read.content}" /></textarea>
@@ -125,26 +130,27 @@ background-color: #fff9ea;
 					</tr>
 				</table>
 				</div>
+		
 				<!-- 숨겨 놓은 답변 창 -->
-				<div id="myDIV" style="display:none; margin-top:40px;">
+				<div id="myDIV" style="display:none; margin-top:80px; padding-top:70px; margin-bottom:300px;">
 					<form name="answerform" role="form" method="post" action="answer">
 					<input type="hidden" id="bno" name="bno" value="${read.bno}" />
-					<h1>답변하기</h1>
+					<h1 id="answerH1" style="color: #ff601c;">답변하기</h1>
 					<table>
 						<tbody>
 							<tr>
 								<th>
-									<label for="title">제목  : </label><input class="writeInputOther" style="margin-left:15px;" type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
+									<label for="title">제목  : </label><input style="width:600px; margin-left:15px;" class="writeInputOther"  type="text" id="title" name="title" class="chk" title="제목을 입력하세요" />
 								</th>
 							</tr>	
 							<tr class="yel">
 							<td>
-							<label for="writer">작성자 : </label><input class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
+							<label for="writer">작성자 : </label><input style="width:300px;" class="writeInputOther" type="text" id="writer" name="writer" class="chk" title="작성자를 입력하세요" />
 							</td>
 							</tr>
-							<tr>
+							<tr style="background-color: #fffcf5;">
 								<td>
-									<label for="content">내용</label><textarea style="margin-top:10px; height:400px;" class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
+									<label for="content">내용 : </label><textarea style="margin-top:10px; height:400px; background-color: #ffffff;" class="writeInputContent" id="content" name="content" class="chk" title="내용을 입력하세요" ></textarea>
 								</td>
 							</tr>
 							<tr>

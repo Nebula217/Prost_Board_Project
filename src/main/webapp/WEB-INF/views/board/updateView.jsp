@@ -11,6 +11,12 @@ input{
 border:0px;
 border-radius:5px;
 }
+textarea:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
 textarea{
 border:0px;
 border-radius:5px;
@@ -58,7 +64,7 @@ background-color: #fff9ea;
 			<section class="container">
 				<form name="updateForm" role="form" method="post" action="update">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
-					<h1>수정하기</h1>
+					<h1 style="color: #ff601c;">수정하기</h1>
 					<table>
 						<tbody>
 							<tr>
@@ -71,9 +77,9 @@ background-color: #fff9ea;
 									<label for="writer">작성자 : </label><input type="text" id="writer" class="readInputOther" name="writer" value="${update.writer}" readonly="readonly"/>
 								</td>
 								</tr>
-							<tr>
+							<tr style="background-color: #fffcf5;">
 								<td>
-									<label for="content">내용</label><textarea style="height:400px; margin-top:20px;" class="writeInputContent" id="content" name="content"><c:out value="${update.content}" /></textarea>
+									<label for="content">내용</label><textarea style="height:400px; margin-top:20px; background-color: #ffffff;" class="writeInputContent" id="content" name="content"><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>

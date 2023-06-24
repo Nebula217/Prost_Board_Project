@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 	<link href="${pageContext.request.contextPath}/resources/css/Board_List.css"rel="stylesheet" type="text/css">
 			     <header class="head">
-            <h1>&#60/&#62PROST</h1>
+            <a style="color: #ffffff;;text-decoration:none;"href="list"><h1>&#60/&#62PROST</h1></a>
             <nav>
-                <span>1</span>
-                <span>1</span>
-                <span>1</span>
+                <span></span>
+                <span></span>
+                <span></span>
             </nav>
         </header>
