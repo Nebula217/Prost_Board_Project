@@ -82,7 +82,7 @@ background-color: #fff9ea;
 				<input type="hidden" id="bno" name="bno" value="${read.bno}" />
 			</form>
 			<div>
-			<h1 style="color: #ff601c;">Q/A</h1>
+			<h1 style="color: #ff601c;">게시글 열람</h1>
 				<table>
 
 					<tbody>

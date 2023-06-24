@@ -25,7 +25,7 @@
 		         FROM MP_BOARD 
 		                       ) MP
 		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
-		ORDER BY BNO DESC
+		ORDER BY refer DESC, step
 	</select>
 	
 <select id="listCount" resultType="int">

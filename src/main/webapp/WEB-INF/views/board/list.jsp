@@ -33,7 +33,7 @@ a {
 		<section class="container">
 			<div>
 				<form role="form" method="post" action="write">
-					<h1 style="color: #ff601c;">Q/A</h1>
+					<h1 style="color: #ff601c;">자유게시판</h1>
 					<table>
 						<tr>
 							<th style="width: 70px;" class="bno">번호</th>

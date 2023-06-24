@@ -69,7 +69,7 @@ background-color: #fff9ea;
 						<tbody>
 							<tr>
 								<th>
-									<label for="title">제목 : </label><input class="writeInput" type="text" id="title" name="title" value="${update.title}"/>
+									<label for="title">제목 : </label><input  style="width:600px;" class="writeInput" type="text" id="title" name="title" value="${update.title}"/>
 								</th>
 							</tr>	
 							<tr class="yel">
