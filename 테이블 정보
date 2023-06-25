@@ -1,3 +1,27 @@
+오라클 사용
+-계정명-
+c##jihoon / jihoon
+
+-기본 게시판 테이블 생성-
+create table mp_board(
+bno number not null,
+title varchar2(100) not null,
+content varchar2(2000) not null,
+writer varchar2(20) not null,
+regdate date default sysdate,
+primary key(bno));
+
+-시퀀스 생성-
+create SEQUENCE mp_board_seq start with 1 increment by 1;
+
+-계층형 게시판으로 바꾸기 위해 필요한 컬럼 추가-
+  alter table mp_board add(
+     refer number default 0,
+     step number DEFAULT 0,
+     depth number DEFAULT 0);
+
+
+
 여기서 controller의 역할은 웹에서 처리해야할 데이터를 받고, 
 
 이 데이터를 담당할 service를 선택하여 호출합니다.
